@@ -23,9 +23,9 @@ module.exports = (robot) ->
     jugyo[gen] = Kamoku(msg.match[2])
 
     #現在の時間を取得
-#    ima = new Date
-#    month = ima.getMonth()
-#    date = ima.getDate()
+    #ima = new Date
+    #month = ima.getMonth()
+    #date = ima.getDate()
 
     robot.brain.set key, jugyo
 
