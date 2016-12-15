@@ -22,15 +22,10 @@ module.exports = (robot) ->
     jugyo = (robot.brain.get key) or {}
     jugyo[gen] = Kamoku(msg.match[2])
 
-    #現在の時間を取得
-    #ima = new Date
-    #month = ima.getMonth()
-    #date = ima.getDate()
-
     robot.brain.set key, jugyo
 
-  #時間割を返答
+#時間割を返答
   robot.respond /明日の([1-5])限は何？/, (msg) ->
-      whgen = msg.match[1]
-      jugyo = (robot.brain.get key) or {}
-        msg.send "#{jugyo[whgen]}"
+    whgen = msg.match[1]
+    jugyo = (robot.brain.get key) or {}
+      msg.send "#{jugyo[whgen]}"
