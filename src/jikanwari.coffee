@@ -13,7 +13,7 @@
 
 module.exports = (robot) ->
 
-  #redisに保存するためのキー
+#redisに保存するためのキー
   key = 'jikanwari'
 
   #明日の時間割を入力
@@ -28,4 +28,4 @@ module.exports = (robot) ->
   robot.respond /明日の([1-5])限は何？/, (msg) ->
     whgen = msg.match[1]
     jugyo = (robot.brain.get key) or {}
-      msg.send "#{jugyo[whgen]}"
+    msg.send "#{jugyo[whgen]}"
