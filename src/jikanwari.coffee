@@ -18,14 +18,14 @@ module.exports = (robot) ->
 
   #明日の時間割を入力
   robot.respond /明日の([1-5])限は(.*)/, (msg) ->
-    gen = msg.match[0]
+    gen = msg.match[1]
     jugyo = (robot.brain.get key) or {}
-    jugyo[gen] = Kamoku(msg.match[1])
+    jugyo[gen] = msg.match[2]
 
     robot.brain.set key, jugyo
 
 #時間割を返答
   robot.respond /明日の([1-5])限は何？/, (msg) ->
-    whgen = msg.match[0]
+    whgen = msg.match[1]
     jugyo = (robot.brain.get key) or {}
     msg.send "#{jugyo[whgen]}"
